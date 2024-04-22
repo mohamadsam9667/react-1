@@ -3,18 +3,22 @@ import './App.css';
 
 function App() {
 
-  const user =
+ 
+    
+
+const User = () => {
+  return(
     <div>
+      <h1>Sarvin</h1>
       <h1>sam</h1>
       <h2>sarvin</h2>
     </div>
-
-const User = () => {
-  return <h1>Sarvin</h1>
+  )
 }
 
   return (
     <div>
+      <User></User>
       <User></User>
     </div>
   )

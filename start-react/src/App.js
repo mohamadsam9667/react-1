@@ -1,25 +1,12 @@
 import logo from './logo.svg';
-import './App.css';
+import style from "./App.style.css"
 
 function App() {
-   const Job=(props)=>{
-    return(
-      <div>
-      <h1>{props.salery}</h1>
-      <h2>{props.position}</h2>
-      <p>{props.company}</p>
-      </div>
-    )
-   }
    
-   return(
-    <div>
-    <Job salery="sam" position={4} company="metric american"></Job>
-    <Job salery="yalda" position={10} company="iran yasa"></Job>
-    </div>
-  )
-
-
+   return (<div className="App">
+    <h1>sam</h1>
+   </div>
+   )
 }
 
 export default App;
@@ -71,6 +58,22 @@ const User = (props) => {
     
   
   
+  )
+  const Job=(props)=>{
+    return(
+      <div>
+      <h1>{props.salery}</h1>
+      <h2>{props.position}</h2>
+      <p>{props.company}</p>
+      </div>
+    )
+   }
+   
+   return(
+    <div>
+    <Job salery="sam" position={4} company="metric american"></Job>
+    <Job salery="yalda" position={10} company="iran yasa"></Job>
+    </div>
   )
 
 

@@ -2,11 +2,11 @@
 import  "./App.css"
 
 function App() {
+   const age=20;
+  
+  if (age>20)return <div className="App">sam</div>;
+   else return <div className="App">under</div>;
    
-   return (<div style={{color:"red",fontSize:"30px"}}>
-    sam
-   </div>
-   )
 }
 
 export default App;

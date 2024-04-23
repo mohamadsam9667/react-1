@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import style from "./App.style.css"
+// import logo from './logo.svg';
+import  "./App.css"
 
 function App() {
    
-   return (<div className="App">
-    <h1>sam</h1>
+   return (<div style={{color:"red",fontSize:"30px"}}>
+    sam
    </div>
    )
 }

@@ -3,10 +3,9 @@ import  "./App.css"
 
 function App() {
    const age=20;
-  
-  if (age>20)return <div className="App">sam</div>;
-   else return <div className="App">under</div>;
-   
+  <div className="App">
+    {age>20?<h1>over</h1>:<h1>under</h1>}
+  </div>
 }
 
 export default App;

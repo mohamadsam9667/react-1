@@ -2,14 +2,16 @@
 import  "./App.css"
 
 function App() {
-   const age=22;
+   const list=["abolfazle","sam","yazdan","mamad","sara"];
    return(
   <div className="App">
 
-    {age>20 ? <h1>over</h1> : <h1>under</h1>}
-    {age===20 && <h1>sam</h1>}
-
-    <button   type="submit" className={age>20 ? "succsess" : " warnning"}>click me</button>
+      {list.map((value,index)=>{
+        return <h1 key={index}>{value}</h1>
+      })}
+  
+  
+  
   </div>
    )
 }

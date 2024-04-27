@@ -1,11 +1,12 @@
 // import logo from './logo.svg';
 import  "./App.css"
+import {useState} from 'react'
 
 function App() {
-  let age=20;
+  const [age,setAge]=useState(10)
+  
   const IncreaseAge=()=>{
-    age=age+1;
-    console.log(age);
+    setAge(age+1)
   }
 
 

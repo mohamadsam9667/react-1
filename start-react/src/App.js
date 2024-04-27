@@ -2,22 +2,29 @@
 import  "./App.css"
 
 function App() {
-   const list=["abolfazle","sam","yazdan","mamad","sara"];
-   return(
-  <div className="App">
+  let age=20;
+  const IncreaseAge=()=>{
+    age=age+1;
+    console.log(age);
+  }
 
-      {list.map((value,index)=>{
-        return <h1 key={index}>{value}</h1>
-      })}
-  
-  
-  
-  </div>
-   )
+
+  return(
+    <div className="App">
+      
+      <h1> {age} </h1>
+      <button onClick={IncreaseAge}>Increase age </button>
+    </div>
+  )  
+
+
 }
-
 export default App;
-/* const GetName = (name) => {
+/*
+
+      {/* <h1>{sam}</h1>
+      // const sam=21;
+ const GetName = (name) => {
     return name;
   } 
     // //props
@@ -83,5 +90,17 @@ const User = (props) => {
     </div>
   )
 
+ const list=["abolfazle","sam","yazdan","mamad","sara"];
+   return(
+  <div className="App">
+    
+    {list.map((name,index)=>{
+    return <h1 ket={index} >{name}</h1>
+      
+    })}
+
+  </div>
+
+  )
 
   */ 

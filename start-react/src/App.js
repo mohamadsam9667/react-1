@@ -1,22 +1,20 @@
 // import logo from './logo.svg';
-import  "./App.css"
+import  "./App.css" 
 import {useState} from 'react'
 
 function App() {
-  const [age,setAge]=useState(10)
-  
-  const IncreaseAge=()=>{
-    setAge(age+1)
-  }
-
+const [age,setage]=useState(0)
 
   return(
     <div className="App">
-      
-      <h1> {age} </h1>
-      <button onClick={IncreaseAge}>Increase age </button>
+
+      <h1>{age}</h1>
+      <button onClick={()=>setage(age+1)}>age increse</button>
+
+
+
     </div>
-  )  
+  )
 
 
 }

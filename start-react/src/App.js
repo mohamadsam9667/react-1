@@ -4,12 +4,13 @@ import {useState} from 'react'
 
 function App() {
 const [age,setage]=useState(0)
-
+const [age,decage]=useState(2)
   return(
     <div className="App">
 
       <h1>{age}</h1>
-      <button onClick={()=>setage(age+1)}>age increse</button>
+
+      <button onClick={()=>decage(age-1)}>age increse</button>
 
 
 

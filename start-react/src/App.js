@@ -3,11 +3,12 @@ import  "./App.css"
 import {useState} from 'react'
 
 function App() {
-const [inputValue,setValue]=useState("")
+  const [showText,setshowText]=useState(true)
 
-    const handelChange=(event)=>{
+
+    const tagText = (event)=>{
   
-      setValue(event.target.value) ;
+      setshowText(!showText) ;
     
     }
 
@@ -15,8 +16,8 @@ const [inputValue,setValue]=useState("")
   return(
     <div className="App">
 
-      <input type="text"  onClick={handelChange} ></input>
-      <h1>{inputValue}</h1>
+      <button   onClick={tagText} >click</button>
+      {showText &&<h1> sam </h1>}
       
 
 

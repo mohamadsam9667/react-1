@@ -3,15 +3,21 @@ import  "./App.css"
 import {useState} from 'react'
 
 function App() {
-const [age,setage]=useState(0)
-const [age,decage]=useState(2)
+const [inputValue,setValue]=useState("")
+
+    const handelChange=(event)=>{
+  
+      setValue(event.target.value) ;
+    
+    }
+
+
   return(
     <div className="App">
 
-      <h1>{age}</h1>
-
-      <button onClick={()=>decage(age-1)}>age increse</button>
-
+      <input type="text"  onClick={handelChange} ></input>
+      <h1>{inputValue}</h1>
+      
 
 
     </div>

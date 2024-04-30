@@ -3,33 +3,17 @@ import  "./App.css"
 import {useState} from 'react'
 
 function App() {
-  
-  const [Teextcolor,setTextcolor]=useState("red")
 
+      const [count,setCount]=useState(0)
 
-  return(
-    <div className="App">
-    
-    <button onClick={()=>{
-      switch(Teextcolor){
-        case "red": setTextcolor("blue");
-        break;
-        case "blue":setTextcolor("yellow");
-        break;
-        case "yellow":setTextcolor("green")
-        break;
-        case "green":setTextcolor("red")
-       
-      } 
-    }}>click me</button>
-    <h1 style={{color:Teextcolor}}>sam is god</h1>
-    
+      return(
+        <div className="App">
+          <button onClick={()=>setCount(count+1)}>increse</button>
 
-    </div>
-  )
+          <h1 >{count}</h1>
 
- 
-
+        </div>
+      )
 
 }
 export default App;

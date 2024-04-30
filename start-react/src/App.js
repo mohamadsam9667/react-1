@@ -10,7 +10,18 @@ function App() {
   return(
     <div className="App">
     
-    <button onClick={()=>{setTextcolor(if(Teextcolor==="red") Teextcolor==="blue"else if(Teextcolor==="blue") Teextcolor="yellow"  )}}>click me</button>
+    <button onClick={()=>{
+      switch(Teextcolor){
+        case "red": setTextcolor("blue");
+        break;
+        case "blue":setTextcolor("yellow");
+        break;
+        case "yellow":setTextcolor("green")
+        break;
+        case "green":setTextcolor("red")
+       
+      } 
+    }}>click me</button>
     <h1 style={{color:Teextcolor}}>sam is god</h1>
     
 

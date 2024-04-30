@@ -1,20 +1,38 @@
 // import logo from './logo.svg';
 import  "./App.css" 
 import {useState} from 'react'
-
+// start project with react
 function App() {
+  
+  const [courselist,setCourselist]=useState([]);
+  const [newcourse,setNewCourse]=useState("");
 
-      const [count,setCount]=useState(0)
 
-      return(
-        <div className="App">
-          <button onClick={()=>setCount(count+1)}>increse</button>
-          <button onClick={()=>setCount(count-1)}>decrease</button>
-         <button onClick={()=>setCount(0)}>convert to zero</button>  
-          <h1 >{count}</h1>
+  const handelChange=(event)=>{
+     setNewCourse(event.target.value)
+  }
 
-        </div>
-      )
+  // const addCourse=()=>{
+  //   let arr=[];
+  //   const name="sarvin";
+  //   arr.push(name)
+  // }
+
+  return(
+    <div className="App">
+    {/* <h1>sam</h1> */}
+    <div className="add-courses"> 
+    <input type="text" onChange={handelChange}></input>
+
+    <button onClick={}>add course</button>
+    </div>
+    {newcourse}
+    <div className="list"></div>
+    </div>
+  )
+
+
+      
 
 }
 export default App;

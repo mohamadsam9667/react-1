@@ -4,22 +4,20 @@ import {useState} from 'react'
 
 function App() {
   
-  const [colorText,SetcolorText]=useState("red")
- 
-  const handelShow=()=>{
- 
-    SetshowText(!showText);
- 
-  }
+  const [Teextcolor,setTextcolor]=useState("red")
 
-    return(
+
+  return(
     <div className="App">
-      <button onClick={()=>{SetcolorText("green" )}}>interest</button>
-     {  <h1 style={{color :colorText}} >sam  </h1>}
-
+    
+    <button onClick={()=>{setTextcolor(if(Teextcolor==="red") Teextcolor==="blue"else if(Teextcolor==="blue") Teextcolor="yellow"  )}}>click me</button>
+    <h1 style={{color:Teextcolor}}>sam is god</h1>
+    
 
     </div>
-    )
+  )
+
+ 
 
 
 }

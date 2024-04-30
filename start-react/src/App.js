@@ -2,43 +2,88 @@ import React, { useState } from 'react';
 import "./App.css";
 
 function App() {
-  const [courselist, setCourselist] = useState([]);
-  const [newcourse, setNewCourse] = useState("");
-
-  const handelChange = (event) => {
-    setNewCourse(event.target.value);
+  const [courselist,setCourselist]=useState([])
+  const [newText,setnewText]=useState("");
+  
+  const recordText=(event)=>{
+    setnewText(event.target.value);
   }
 
-  const addCourse = () => {
-    setCourselist([...courselist, newcourse]);
-    setNewCourse(""); // Reset input after adding course
+
+
+  const addCourse=()=>{
+
+    const newCourselist=[...courselist,newText]
+    setCourselist(newCourselist)
+    console.log(courselist);
+    setnewText(" ")
+    // let arr=[];
+    // const name="";
+    // arr.push(name);
   }
 
-  const deleteCourse = (course) => {
-    const newCourseList = courselist.filter((courselistName) => {
-      return courselistName !== course;
-    });
-    setCourselist(newCourseList);
+
+  const delet=(course)=>{
+
+  const newCourselist=courselist.filter((courses)=>{
+    if(courses===course) return false 
+    else return true
+  })
+  setCourselist(newCourselist);
+  
+  
+  
+  // const array=["sam","sara","zeynab"];
+  // const Answer=array.filter((name)=>{
+  //   if(name===course)
+  //   {
+  //     return false;
+  //   }
+  //   else 
+  //   return true;
+
+
+  // }
   }
 
-  return (
+
+
+
+  return(
     <div className="App">
-      <div className="add-courses">
-        <input type="text" value={newcourse} onChange={handelChange} />
-        <button onClick={addCourse}>Add Course</button>
+
+      <div className='information'>
+        
+        <input value={newText} onChange={recordText}></input><br></br>
+        <button onClick={addCourse}>click me</button>
+
+
+
+
+
       </div>
+
+
       <div className="list">
-        {courselist.map((course, index) => {
+        {courselist.map((course)=>{
           return (
-            <div key={index}>
-              <h1>{course}</h1>
-              <button onClick={() => deleteCourse(course)}>x</button>
-            </div>
-          );
+        <div>
+          <h1>{course}</h1>
+          <button onClick={()=>delet(course)}>x</button>
+        </div>
+        )
         })}
+
+        
+
+
       </div>
+
     </div>
-  );
+  )
+
+
+
 }
 
 export default App;

@@ -4,15 +4,18 @@ import {useState} from 'react'
 
 function App() {
   
-  const [showText,SetshowText]=useState(true)
+  const [colorText,SetcolorText]=useState("red")
+ 
   const handelShow=()=>{
-   SetshowText(!showText);
+ 
+    SetshowText(!showText);
+ 
   }
 
     return(
     <div className="App">
-      <button onClick={handelShow}>interest</button>
-     { showText && <h1 >sam  </h1>}
+      <button onClick={()=>{SetcolorText("green" )}}>interest</button>
+     {  <h1 style={{color :colorText}} >sam  </h1>}
 
 
     </div>

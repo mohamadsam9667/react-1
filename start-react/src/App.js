@@ -9,7 +9,8 @@ function App() {
       return(
         <div className="App">
           <button onClick={()=>setCount(count+1)}>increse</button>
-
+          <button onClick={()=>setCount(count-1)}>decrease</button>
+          {/* <button onClick={()=>setCount()}></button> */}
           <h1 >{count}</h1>
 
         </div>

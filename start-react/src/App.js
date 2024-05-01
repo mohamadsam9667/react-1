@@ -11,6 +11,15 @@ function App() {
   }
 
   const output_text=()=>{
+    const course={
+
+      id: courslist.length ==== 0 ? 1 :courslist[courslist.length-1].id+1,
+      courseName:newText
+    }
+
+
+
+
     setCourselist([...courslist,newText]);
     console.log(courslist);
       setNewText(" ")

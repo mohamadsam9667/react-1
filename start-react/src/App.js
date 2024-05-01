@@ -11,16 +11,13 @@ function App() {
   }
 
   const output_text=()=>{
-
-    const newCourse=[...courslist,newText];
-    setCourselist(newCourse);
+    setCourselist([...courslist,newText]);
     console.log(courslist);
       setNewText(" ")
   }
   const deleteCourse=(course)=>{
     const courses=courslist.filter((coursefilter)=>{
-      if(coursefilter===course) return false;
-      else return true;
+    return course!==coursefilter;
     })
     setCourselist(courses)
   }
@@ -38,6 +35,7 @@ function App() {
     <div className='list'>
     
     {courslist.map((course)=>{
+
 
       return(
         <div>

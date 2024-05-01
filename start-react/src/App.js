@@ -2,85 +2,65 @@ import React, { useState } from 'react';
 import "./App.css";
 
 function App() {
-  const [courselist,setCourselist]=useState([])
-  const [newText,setnewText]=useState("");
-  
-  const recordText=(event)=>{
-    setnewText(event.target.value);
+
+  const [courslist,setCourselist]=useState([]);
+  const [newText,setNewText]=useState("");
+
+  const handel_new_text=(event)=>{
+    setNewText(event.target.value);
   }
 
+  const output_text=()=>{
 
-
-  const addCourse=()=>{
-
-    const newCourselist=[...courselist,newText]
-    setCourselist(newCourselist)
-    console.log(courselist);
-    setnewText(" ")
-    // let arr=[];
-    // const name="";
-    // arr.push(name);
+    const newCourse=[...courslist,newText];
+    setCourselist(newCourse);
+    console.log(courslist);
+      setNewText(" ")
   }
-
-
-  const delet=(course)=>{
-
-  const newCourselist=courselist.filter((courses)=>{
-    if(courses===course) return false 
-    else return true
-  })
-  setCourselist(newCourselist);
-  
-  
-  
-  // const array=["sam","sara","zeynab"];
-  // const Answer=array.filter((name)=>{
-  //   if(name===course)
-  //   {
-  //     return false;
-  //   }
-  //   else 
-  //   return true;
-
-
-  // }
+  const deleteCourse=(course)=>{
+    const courses=courslist.filter((coursefilter)=>{
+      if(coursefilter===course) return false;
+      else return true;
+    })
+    setCourselist(courses)
   }
-
-
 
 
   return(
-    <div className="App">
+    <div className='App'>
 
-      <div className='information'>
-        
-        <input value={newText} onChange={recordText}></input><br></br>
-        <button onClick={addCourse}>click me</button>
-
-
-
-
-
-      </div>
-
-
-      <div className="list">
-        {courselist.map((course)=>{
-          return (
-        <div>
-          <h1>{course}</h1>
-          <button onClick={()=>delet(course)}>x</button>
+        <div className='information'>
+        <input value={newText} type='text' onChange={handel_new_text}></input>
+        <button onClick={output_text} >click me</button>
         </div>
-        )
-        })}
+   
 
-        
+    <div className='list'>
+    
+    {courslist.map((course)=>{
+
+      return(
+        <div>
+
+        <h1>{course}</h1>
+        <button onClick={() => deleteCourse(course)}>x</button>
 
 
       </div>
+    )
+    
+    
+  })}
+
+    
+    </div>
+
 
     </div>
+
   )
+
+
 
 
 

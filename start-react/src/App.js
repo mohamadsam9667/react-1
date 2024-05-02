@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "./App.css";
+import Course from './Course';
 
 function App() {
 
@@ -41,15 +42,7 @@ function App() {
     <div className='list'>
     
     {courselist.map((course,index)=>{
-      return(
-        <div key={`div_${index}`}>
-
-        <h1 key={`discrip_${index}`}> {course.courseName}</h1>
-        <button  key={`btn_${index}`}   onClick={() => deleteCourse(course.id)}>x</button>
-
-
-      </div>
-    )
+      return( <Course key={index} course={course} deleteCourse={deleteCourse} /> )
     
     
   })}

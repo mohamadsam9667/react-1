@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
 
-  const [courslist,setCourselist]=useState([]);
+  const [courselist,setCourselist]=useState([]);
   const [newText,setNewText]=useState("");
 
   const handel_new_text=(event)=>{
@@ -12,23 +12,20 @@ function App() {
 
   const output_text=()=>{
     const course={
-
-      id: courslist.length ==== 0 ? 1 :courslist[courslist.length-1].id+1,
+      id: courselist.length === 0 ? 1 : courselist[courselist.length-1].id+1,
       courseName:newText
     }
-
-
-
-
-    setCourselist([...courslist,newText]);
-    console.log(courslist);
+    setCourselist([...courselist,course]);
+    console.log(courselist);
       setNewText(" ")
   }
-  const deleteCourse=(course)=>{
-    const courses=courslist.filter((coursefilter)=>{
-    return course!==coursefilter;
-    })
-    setCourselist(courses)
+
+
+  const deleteCourse=(courseId)=>{
+    const courses=courselist.filter((course)=>{
+    return courseId!==course.id;
+    });
+    setCourselist(courses);
   }
 
 
@@ -43,14 +40,12 @@ function App() {
 
     <div className='list'>
     
-    {courslist.map((course)=>{
-
-
+    {courselist.map((course,index)=>{
       return(
-        <div>
+        <div key={`div_${index}`}>
 
-        <h1>{course}</h1>
-        <button onClick={() => deleteCourse(course)}>x</button>
+        <h1 key={`discrip_${index}`}> {course.courseName}</h1>
+        <button  key={`btn_${index}`}   onClick={() => deleteCourse(course.id)}>x</button>
 
 
       </div>
